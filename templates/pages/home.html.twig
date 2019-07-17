@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Netkom Informatique' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Netkom Informatique</h1>
+            <p>Depuis maintenant 18 ans nous intervenons sur tout type de matériel (du PC au serveur), routeur, sur tout type
+                d'installation (bureau, armoire rack, caisse de magasin), pour du dépannage, de la préparation ou du déploiement.
+                Sans oublier la vente de matériel informatique d'occasion.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Les dernières occasions</h2>
+        <div class="row flex">
+            {% for property in properties %}
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <a href="{{ path('property_show', {id: property.id, slug: property.slug}) }}">{{ property.title }}</a>
+                            </h5>
+                            <p class="card-text">{{ property.type }}{{ property.marque }}</p>
+                            <div class="text-primary">{{ property.price }}</div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

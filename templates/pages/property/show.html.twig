@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title property.title %}
+
+{% block body %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+
+                </div>
+                <div class="col-md-4">
+                    <h1>{{ property.title }}</h1>
+                    <h2>{{ property.marque }}</h2>
+                    <div class="text-primary" style="font-size: 2rem;font-weight: bold;">{{ property.price }} €</div>
+                    <a href="" class="btn btn-primary">Contactez-nous</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Caractréristiques</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Marque</td>
+                        <td>{{ property.marque }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{ property.Type }}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        {#        nl2br : filtre pour ajouter automatiquement des sauts de lignes#}
+                        <td>{{ property.description | nl2br }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
